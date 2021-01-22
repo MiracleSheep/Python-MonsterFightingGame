@@ -30,56 +30,85 @@ class Game(program):
             print("      Attack one:", m.A1.N)
             print("      Attack two:", m.A2.N)
             print("      Attack three:", m.A3.N)
-            i = input("Press any key to continue")
+            i = input("Press enter to continue")
 
             MDefeated = False
             PDefeated = False
             while MDefeated == False and PDefeated == False:
 
                 print("Your health is:", p.health)
+                print("The ", m.name, "'s health is:", m.h)
                 choice = p.HitBlock()
+                num1 = randint(0, 1)
 
                 if choice == 1:
-                    m.h = m.h - p.Attack()
-                    print("You decided to attack. The ", m.name,"'s health is now ", m.h)
+                    print("You decided to attack.")
                 else:
+                    print("You decided to block.")
                     pass
 
-                if m.h <= 0:
-                    print("The ", m.name, " has been defeated!")
-                    MDefeated = True
-                    defeated += 1
+                self.talk("It is now the monster's turn.",1)
+
+                if (num1 == 1):
+                    print("the monster chooses to block")
+
                 else:
-
-                    self.talk("It is now the monster's turn.",1)
-
-
-                    num = randint(0, 2)
-                    if num == 1:
-                        Attack = m.A1
-                    elif num == 0:
-                        Attack = m.A2
-                    elif num == 2:
-                        Attack = m.A3
+                    print("The monster chooses to attack!")
 
 
-                    print("The monster uses the attack ", Attack.N)
-                    if choice == 1:
-                        print("You take " , Attack.A, " points of damage.")
-                        p.health = p.health - Attack.A
+                num = randint(0, 2)
+                if num == 1:
+                  Attack = m.A1
+                elif num == 0:
+                    Attack = m.A2
+                elif num == 2:
+                    Attack = m.A3
+
+
+
+                if (choice == 1 and num1 == 1):
+                    a = p.Attack()
+                    print("You attack first!")
+                    print("You deal",a,"Damage!")
+                    print("The monster braces themselves so they take none of your damage.")
+                elif(choice == 1 and num1 == 0):
+                    a = p.Attack()
+                    print("You attack first!")
+                    print("You deal",a,"Damage!")
+                    m.h = m.h - p.Attack()
+                    if m.h <= 0:
+                        print("The ", m.name, " has been defeated!")
+                        MDefeated = True
+                        defeated += 1
                     else:
-                        print("You blocked!")
-                        print("You don't take any Damage!")
+                        print("The", m.name, "retaliates!")
+                        print("The", m.name, "uses the attack ", Attack.N)
+                        print("You take ", Attack.A, " points of damage.")
 
+                    p.health = p.health - Attack.A
                     if p.health <= 0:
-                        print("You have been defeated by the ", m.name , ".")
-                        self.talk("Better luck next time!",1)
+                        print("You have been defeated by the ", m.name, ".")
+                        self.talk("Better luck next time!", 1)
                         PDefeated = True
                         return
+                elif(choice == 0 and num1 == 0):
+                    print("You brace yourself.")
+                    print("The",m.name,"uses the attack ", Attack.N)
+                    print("You take 0 points of damage.")
+                elif(choice == 0 and num1 == 1):
+                    print("Both of you block!")
+                    print("Now you look kind of stupid...")
 
-                if PDefeated == True:
-                    Gameon = False
+
+                if p.health <= 0:
+                    print("You have been defeated by the ", m.name , ".")
+                    self.talk("Better luck next time!",1)
+                    PDefeated = True
                     return
+
+
+            if PDefeated == True:
+                return
 
 
 
@@ -88,9 +117,9 @@ class Game(program):
                 Gameon = False
 
 
-            pass
 
-        pass
+
+
 
 # function that gets the length of the gamne from the player
 

@@ -11,7 +11,7 @@ class Player():
     def __init__(self):
         self.name = self.Name()
         self.health = self.Health()
-        input("Press any key to continue:")
+        input("Press enter to continue")
 
     # Gets the name of the player
     def Name(self):
