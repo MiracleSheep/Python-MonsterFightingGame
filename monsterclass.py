@@ -50,14 +50,6 @@ class Monster():
 
         return tname
 
-#Function that chooses an attack to use
-    def Attack(self):
-        num = randint(0,2)
-        if num == 1:
-            return self.A1
-        elif num == 0:
-            return self.A2
-        elif num == 2:
-            return self.A3
+
 
 

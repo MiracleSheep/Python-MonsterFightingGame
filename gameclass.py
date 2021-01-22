@@ -1,6 +1,7 @@
 from programclass import program
 from monsterclass import Monster
 from playerclass import Player
+from random import randint
 
 
 # This is the class for the game
@@ -48,23 +49,37 @@ class Game(program):
                     print("The ", m.name, " has been defeated!")
                     MDefeated = True
                     defeated += 1
+                else:
+
+                    self.talk("It is now the monster's turn.",1)
+
+
+                    num = randint(0, 2)
+                    if num == 1:
+                        Attack = m.A1
+                    elif num == 0:
+                        Attack = m.A2
+                    elif num == 2:
+                        Attack = m.A3
+
+
+                    print("The monster uses the attack ", Attack.N)
+                    if choice == 1:
+                        print("You take " , Attack.A, " points of damage.")
+                        p.health = p.health - Attack.A
+                    else:
+                        print("You blocked!")
+                        print("You don't take any Damage!")
+
+                    if p.health <= 0:
+                        print("You have been defeated by the ", m.name , ".")
+                        self.talk("Better luck next time!",1)
+                        PDefeated = True
+                        return
+
+                if PDefeated == True:
+                    Gameon = False
                     return
-
-                self.talk("It is now the monster's turn.",1)
-                Attack = m.Attack()
-                print("The monster uses the attack ", Attack.AttackName())
-                print("You take " , Attack.Attack(), " points of damage.")
-                p.health = p.health - Attack.Attack()
-
-                if p.health <= 0:
-                    print("You have been defeated by the ", m.name , ".")
-                    self.talk("Better luck next time!",1)
-                    PDefeated = True
-                    return
-
-            if PDefeated == True:
-                Gameon = False
-                return
 
 
 
