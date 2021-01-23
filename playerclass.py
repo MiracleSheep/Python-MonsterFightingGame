@@ -28,9 +28,18 @@ class Player():
 
     # Gets the choice of the player
     def HitBlock(self):
-        print("Would you like to hit or block?")
-        choice = int(input("One for hit, 0 for block:"))
-        return choice
+        choice = 3
+        while choice != 0 or choice != 1 or choice != 2:
+            try:
+                print("Would you like to hit or block?")
+                choice = int(input("Two for feint, One for hit, 0 for block:"))
+            except:
+                choice = 3
+
+            if (choice > 2 or choice < 0):
+                print("That is not an appropriate response!")
+            else:
+                return choice
 
     # Gets the attack damage of the player
     def Attack(self):
