@@ -1,7 +1,0 @@
-attackclass
-gameclass
-main
-monsterclass
-playerclass
-programclass
-startclass
