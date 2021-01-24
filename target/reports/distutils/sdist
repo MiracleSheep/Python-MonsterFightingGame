@@ -1,0 +1,50 @@
+running clean
+'build\lib' does not exist -- can't clean it
+'build\bdist.win-amd64' does not exist -- can't clean it
+'build\scripts-3.7' does not exist -- can't clean it
+running sdist
+running egg_info
+creating MonsterFightingGame.egg-info
+writing MonsterFightingGame.egg-info\PKG-INFO
+writing dependency_links to MonsterFightingGame.egg-info\dependency_links.txt
+writing namespace_packages to MonsterFightingGame.egg-info\namespace_packages.txt
+writing top-level names to MonsterFightingGame.egg-info\top_level.txt
+writing manifest file 'MonsterFightingGame.egg-info\SOURCES.txt'
+reading manifest file 'MonsterFightingGame.egg-info\SOURCES.txt'
+writing manifest file 'MonsterFightingGame.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+warning: Check: missing required meta-data: url
+
+warning: Check: missing meta-data: either (author and author_email) or (maintainer and maintainer_email) must be supplied
+
+creating MonsterFightingGame-1.0.dev0
+creating MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+creating MonsterFightingGame-1.0.dev0\scripts
+copying files to MonsterFightingGame-1.0.dev0...
+copying attackclass.py -> MonsterFightingGame-1.0.dev0
+copying gameclass.py -> MonsterFightingGame-1.0.dev0
+copying main.py -> MonsterFightingGame-1.0.dev0
+copying monsterclass.py -> MonsterFightingGame-1.0.dev0
+copying playerclass.py -> MonsterFightingGame-1.0.dev0
+copying programclass.py -> MonsterFightingGame-1.0.dev0
+copying setup.py -> MonsterFightingGame-1.0.dev0
+copying startclass.py -> MonsterFightingGame-1.0.dev0
+copying MonsterFightingGame.egg-info\PKG-INFO -> MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+copying MonsterFightingGame.egg-info\SOURCES.txt -> MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+copying MonsterFightingGame.egg-info\dependency_links.txt -> MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+copying MonsterFightingGame.egg-info\namespace_packages.txt -> MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+copying MonsterFightingGame.egg-info\top_level.txt -> MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+copying MonsterFightingGame.egg-info\zip-safe -> MonsterFightingGame-1.0.dev0\MonsterFightingGame.egg-info
+copying scripts\attackclass.py -> MonsterFightingGame-1.0.dev0\scripts
+copying scripts\gameclass.py -> MonsterFightingGame-1.0.dev0\scripts
+copying scripts\main.py -> MonsterFightingGame-1.0.dev0\scripts
+copying scripts\monsterclass.py -> MonsterFightingGame-1.0.dev0\scripts
+copying scripts\playerclass.py -> MonsterFightingGame-1.0.dev0\scripts
+copying scripts\programclass.py -> MonsterFightingGame-1.0.dev0\scripts
+copying scripts\startclass.py -> MonsterFightingGame-1.0.dev0\scripts
+Writing MonsterFightingGame-1.0.dev0\setup.cfg
+creating dist
+Creating tar archive
+removing 'MonsterFightingGame-1.0.dev0' (and everything under it)
